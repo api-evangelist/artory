@@ -1,23 +1,70 @@
 aid: artory
+
 name: Artory
-description: 'Artory is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://framerusercontent.com/assets/iH0NXT3mQAExFaujkX72Vfn4.png
+
+description: 'Artory provides a secure, immutable ledger for recording and verifying the provenance of high‑value assets such as fine art, collectibles, and real estate. By combining blockchain‑based technology with data science, Artory enables collectors, dealers, and institutions to maintain a trusted record of ownership, transaction history, and valuation. The platform supports asset‑level data integration, secure document storage, and API access for partners to query and update asset records, fostering transparency and confidence in the secondary market.'
+
 url: https://raw.githubusercontent.com/api-evangelist/artory/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-26 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-26'
+
 modified: '2026-09-26'
+
 tags:
 - Company
-apis: []
+- Art
+- Marketplace
+- Data
+- AssetManagement
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: LLMsTxt
+  url: llms/artory-llms.txt
+- type: Hosts
+  url: hosts/artory-hosts.yml
+- type: TermsOfService
+  url: https://www.wag-art.com/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.wag-art.com/privacy-policy
+- type: Newsroom
+  url: https://www.wag-art.com/who-we-are/press
+- type: Leadership
+  url: https://www.wag-art.com/team
+- type: DomainSecurity
+  url: security/artory-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/artory_stock/
+  url: https://www.wag-art.com/
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: No OpenAPI, AsyncAPI, GraphQL, gRPC, or WSDL spec found at api.wag-art.com despite probing common endpoints.
+  evidence:
+    - url: https://api.wag-art.com/openapi.json
+      status: 000
+  checked: 2026-09-26
+x-enrichment:
+  date: '2026-09-26'
+  status: enriched
+  artifacts_added: 6
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
